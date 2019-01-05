@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SnS | Informacje</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 20vh;">
+        <div class="col-md-4">
+            <div class="stats text-center">
+                <div class="number">
+                    <span th:text="${overallDistance}"></span>
+                </div>
+                <h3>metrów</h3>
+                <p>dystans pokonany podczas dzisiejszych zawodów</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stats text-center">
+                <div class="number">
+                    <span th:text="${numberOfParticipants}"></span>
+                </div>
+                <h3>zawodników</h3>
+                <p>zarejestrowanych do udziału w zawodach</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stats text-center">
+                <div class="number">
+                    <span th:text="${completenessPercentage + '%'}"></span>
+                </div>
+                <h3>lotów</h3>
+                <p>wykonanych dla zarejestrowanych uczestników</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row participant-welcome" style="margin-top: 10vh;">
+        <div class="col-md-12">
+            <h3 style="text-align: center;" th:text="${'Witamy nowego użytkownika: ' + latestParticipant.firstName + ' ' + latestParticipant.lastName}"></h3>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SnS | Dodaj lot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="section-navigation">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Panel administratora</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dodaj lot</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-heading">
+        <h2>Wprowadź dane lotu</h2>
+        <div class="line"></div>
+    </div>
+
+    <form action="#" th:action="@{/addflight}" th:object="${flight}" method="post">
+        <table>
+            <tr>
+                <td>ID uczestnika</td>
+                <td><input type="text" th:field="*{connectedParticipantId}"/></td>
+            </tr>
+            <tr>
+                <td>Dystans</td>
+                <td><input type="text" th:field="*{distance}"/></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Dodaj lot</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

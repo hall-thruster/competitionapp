@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SnS | Ranking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; initial-scale=1, maximum-scale=1"
+          name="viewport"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="section-navigation">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Panel administratora</a></li>
+                <li class="breadcrumb-item"><a th:href="@{/ranking}">Wybór rankingu</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><span
+                        th:text="'Ranking dla kategorii ' + ${category}"></span></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-heading">
+        <h1 th:text="'Ranking dla kategorii ' + ${category}"></h1>
+        <div class="line"></div>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Imię</td>
+            <td>Nazwisko</td>
+            <td>Kategoria</td>
+            <td>Wynik</td>
+            <td></td>
+        </tr>
+        <tr th:each="participant : ${ranking}">
+            <td th:text="${participant.id}"></td>
+            <td th:text="${participant.firstName}"></td>
+            <td th:text="${participant.lastName}"></td>
+            <td th:text="${participant.category}"></td>
+            <td th:text="${participant.flightLengthSum}"></td>
+            <td>
+                <a th:href="@{'/participants/' + ${participant.id}}">
+                    <button type="button" class="btn btn-primary">Przejdź do użytkownika</button>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

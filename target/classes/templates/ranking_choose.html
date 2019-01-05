@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SnS | Wybierz ranking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; initial-scale=1, maximum-scale=1"
+          name="viewport"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="section-navigation">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Panel administratora</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Wybór rankingu</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-heading">
+        <h1 th:text="'Wybierz który ranking wyświetlić'"></h1>
+        <div class="line"></div>
+    </div>
+
+    <a th:href="@{/ranking/1}">
+        <button type="button" class="btn btn-primary">Ranking dla kategorii 1</button>
+    </a>
+    <a th:href="@{/ranking/2}">
+        <button type="button" class="btn btn-primary">Ranking dla kategorii 2</button>
+    </a>
+    <a th:href="@{/ranking/3}">
+        <button type="button" class="btn btn-primary">Ranking dla kategorii 3</button>
+    </a>
+    <a th:href="@{/ranking/4}">
+        <button type="button" class="btn btn-primary">Ranking dla kategorii 4</button>
+    </a>
+    <a th:href="@{/ranking/open}">
+        <button type="button" class="btn btn-primary">Ranking dla kategorii OPEN</button>
+    </a>
+    <a th:href="@{/ranking/overall}">
+        <button type="button" class="btn btn-primary">Ranking ogólny</button>
+    </a>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${'SnS | Uczestnik ' + participant.id}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="section-navigation">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Panel administratora</a></li>
+                <li class="breadcrumb-item"><a th:href="@{/participants}">Lista uczestników</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><span th:text="${participant.id}"></span></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="section-heading">
+            <div class="col-md-6">
+                <h2 th:text="${participant.firstName + ' ' + participant.lastName}"></h2>
+            </div>
+            <div class="col-md-6">
+                <h2 th:text="${participant.id}"></h2>
+            </div>
+            <div class="col-md-12">
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4 th:text="${'Kategoria: ' + participant.category}"></h4>
+            <h4 th:text="${'Data urodzenia: ' + participant.birthDay + '/' + participant.birthMonth + '/' + participant.birthYear}"></h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <tr>
+                    <td><h4>Wykonane loty</h4></td>
+                </tr>
+                <tr th:each="flight : ${flights}">
+                    <td><span th:text="${flight.distance}"></span> m</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <a th:href="@{/participants/{id}/edit(id=${participant.id})}">
+                <button type="button" class="btn btn-primary">Edytuj uczestnika</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

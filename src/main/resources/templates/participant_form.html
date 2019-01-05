@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SnS | Dodaj uczestnika</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="section-navigation">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Panel administratora</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dodaj użytkownika</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-heading">
+        <h2>Dodaj użytkownika</h2>
+        <div class="line"></div>
+    </div>
+
+    <form action="#" th:action="@{/addparticipant}" th:object="${participant}" method="post">
+        <table>
+            <tr>
+                <td>Imię</td>
+                <td><input type="text" th:field="*{firstName}"/></td>
+            </tr>
+            <tr>
+                <td>Nazwisko</td>
+                <td><input type="text" th:field="*{lastName}"/></td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Dzień urodzenia</td>
+                <td><input type="text" th:field="*{birthDay}"/></td>
+            </tr>
+            <tr>
+                <td>Miesiąc urodzenia</td>
+                <td>
+                    <select th:field="*{birthMonth}">
+                        <option th:value="1" th:text="Styczeń"></option>
+                        <option th:value="2" th:text="Luty"></option>
+                        <option th:value="3" th:text="Marzec"></option>
+                        <option th:value="4" th:text="Kwiecień"></option>
+                        <option th:value="5" th:text="Maj"></option>
+                        <option th:value="6" th:text="Czerwiec"></option>
+                        <option th:value="7" th:text="Lipiec"></option>
+                        <option th:value="8" th:text="Sierpień"></option>
+                        <option th:value="9" th:text="Wrzesień"></option>
+                        <option th:value="10" th:text="Październik"></option>
+                        <option th:value="11" th:text="Listopad"></option>
+                        <option th:value="12" th:text="Grudzień"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Rok urodzenia</td>
+                <td><input type="text" th:field="*{birthYear}"/></td>
+            </tr>
+            <tr>
+                <td>Czy OPEN</td>
+                <td><input type="checkbox" th:field="*{open}"/></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Dodaj zawodnika</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; Smyki na Start 2019</p>
+</footer>
+
+</body>
+</html>

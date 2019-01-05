@@ -1,0 +1,80 @@
+.section-heading h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.section-heading .line {
+  border-bottom: 3px solid;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.info-background {
+  background: green;
+}
+.info-background p {
+  color: white;
+  font-size: 20px;
+}
+
+.achievement-wrapper {
+  margin-bottom: 10px;
+}
+.achievement-wrapper .achievement {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+.icon-background {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: #2b83e7;
+}
+.icon-background .icon-centered {
+  text-align: center;
+  display: block !important;
+  padding-top: 21px;
+  color: #ffffff;
+}
+
+.section-navigation {
+  background: whitesmoke;
+}
+.section-navigation ol {
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+
+.stats .number span {
+  font-size: 55px;
+  font-weight: 900;
+  color: #4DA6C1;
+}
+.stats h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.participant-welcome h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: whitesmoke;
+  color: #4da6c1;
+  text-align: center;
+}
+footer p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
